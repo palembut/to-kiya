@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Kiya ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+    --bg:#100910;
+    --bg2:#24121e;
+    --pink:#e8a1bb;
+    --pink2:#f6cddd;
+    --white:#fff8fb;
+    --muted:#bdaeb6;
+    --line:rgba(255,255,255,.12);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:"DM Sans",sans-serif;
+    color:var(--white);
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(224,111,157,.18),transparent 30%),
+        radial-gradient(circle at 85% 80%,rgba(232,161,187,.12),transparent 30%),
+        linear-gradient(135deg,var(--bg),var(--bg2));
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.glow{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(226,115,158,.09);
+    filter:blur(80px);
+}
+
+.glow.one{
+    top:-120px;
+    left:-100px;
+}
+
+.glow.two{
+    right:-100px;
+    bottom:-100px;
+}
+
+.heart-float{
+    position:absolute;
+    color:rgba(246,205,221,.28);
+    font-size:18px;
+    animation:floatHeart linear infinite;
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(110vh) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    85%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-15vh) rotate(25deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.wrapper{
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    position:relative;
+    z-index:5;
+}
+
+.card{
+    width:100%;
+    max-width:500px;
+    min-height:520px;
+
+    padding:40px 35px;
+
+    border:1px solid var(--line);
+    border-radius:30px;
+
+    background:rgba(30,16,27,.78);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        inset 0 1px rgba(255,255,255,.04);
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* =========================
+   LAYERS
+========================= */
+
+.layer{
+    display:none;
+    min-height:440px;
+    flex-direction:column;
+    justify-content:center;
+    animation:layerIn .7s ease;
+}
+
+.layer.active{
+    display:flex;
+}
+
+@keyframes layerIn{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.center{
+    text-align:center;
+}
+
+.small{
+    color:var(--pink);
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+h1{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    font-weight:500;
+    line-height:1.15;
+}
+
+h2{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+    font-weight:500;
+}
+
+.description{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:14px;
+    margin-top:15px;
+}
+
+/* =========================
+   HEART
+========================= */
+
+.big-heart{
+    width:90px;
+    height:90px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    color:var(--pink2);
+    font-size:38px;
+
+    border:1px solid rgba(232,161,187,.25);
+
+    background:rgba(232,161,187,.06);
+
+    animation:heartBeat 1.8s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group{
+    margin-top:25px;
+    text-align:left;
+}
+
+.input-group label{
+    display:block;
+    font-size:13px;
+    color:#d6c5cd;
+    margin-bottom:8px;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+
+    border-radius:12px;
+    border:1px solid var(--line);
+
+    outline:none;
+
+    background:rgba(255,255,255,.035);
+    color:white;
+
+    transition:.25s;
+}
+
+.input-group input:focus{
+    border-color:var(--pink);
+    box-shadow:0 0 0 4px rgba(232,161,187,.07);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+    font-family:inherit;
+}
+
+.main-btn{
+    width:100%;
+
+    margin-top:18px;
+    padding:14px 20px;
+
+    border:0;
+    border-radius:13px;
+
+    background:var(--pink);
+    color:#28151e;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.main-btn:hover{
+    transform:translateY(-2px);
+    background:var(--pink2);
+}
+
+.secondary-btn{
+    width:100%;
+
+    margin-top:10px;
+    padding:13px;
+
+    border-radius:13px;
+
+    border:1px solid var(--line);
+
+    background:rgba(255,255,255,.035);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.secondary-btn:hover{
+    background:rgba(232,161,187,.08);
+    border-color:rgba(232,161,187,.35);
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+    margin-top:25px;
+
+    color:#eee2e7;
+
+    font-size:14px;
+    line-height:1.9;
+
+    max-height:310px;
+    overflow:auto;
+
+    padding-right:5px;
+}
+
+.letter p{
+    margin-bottom:17px;
+}
+
+.signature{
+    padding-top:15px;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+}
+
+.signature strong{
+    display:block;
+
+    color:var(--pink2);
+
+    font-family:"Playfair Display",serif;
+    font-size:23px;
+
+    margin-top:4px;
+}
+
+/* =========================
+   ANSWER BUTTONS
+========================= */
+
+.answer-buttons{
+    margin-top:30px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.accept{
+    border:0;
+
+    padding:15px;
+
+    border-radius:13px;
+
+    background:var(--pink);
+
+    color:#27141d;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.accept:hover{
+    transform:translateY(-3px);
+    background:var(--pink2);
+}
+
+.reject{
+    padding:15px;
+
+    border-radius:13px;
+
+    border:1px solid var(--line);
+
+    background:rgba(255,255,255,.035);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.reject:hover{
+    background:rgba(255,255,255,.07);
+}
+
+/* =========================
+   RESULT
+========================= */
+
+.result-icon{
+    font-size:65px;
+    margin-bottom:20px;
+
+    animation:heartBeat 1.5s infinite;
+}
+
+.result-text{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:14px;
+    margin-top:15px;
+}
+
+.error{
+    height:20px;
+
+    color:#e9a1b7;
+
+    font-size:13px;
+
+    text-align:center;
+
+    margin-top:10px;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress{
+    position:absolute;
+
+    top:18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:6px;
+}
+
+.dot{
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.3s;
+}
+
+.dot.active{
+    width:20px;
+    border-radius:10px;
+    background:var(--pink);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:520px){
+
+    .wrapper{
+        padding:12px;
+    }
+
+    .card{
+        min-height:560px;
+        padding:40px 22px 25px;
+        border-radius:24px;
+    }
+
+    h1{
+        font-size:35px;
+    }
+
+    h2{
+        font-size:29px;
+    }
+
+    .answer-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .letter{
+        max-height:330px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <div class="heart-float" style="left:8%;animation-duration:12s;">♡</div>
+    <div class="heart-float" style="left:18%;animation-duration:16s;animation-delay:3s;">♥</div>
+    <div class="heart-float" style="left:32%;animation-duration:13s;animation-delay:1s;">♡</div>
+    <div class="heart-float" style="left:48%;animation-duration:17s;animation-delay:5s;">♥</div>
+    <div class="heart-float" style="left:63%;animation-duration:14s;animation-delay:2s;">♡</div>
+    <div class="heart-float" style="left:78%;animation-duration:18s;animation-delay:4s;">♥</div>
+    <div class="heart-float" style="left:90%;animation-duration:15s;animation-delay:6s;">♡</div>
+
+</div>
+
+
+<div class="wrapper">
+
+<div class="card">
+
+    <!-- PROGRESS -->
+
+    <div class="progress">
+
+        <span class="dot active" id="dot1"></span>
+        <span class="dot" id="dot2"></span>
+        <span class="dot" id="dot3"></span>
+        <span class="dot" id="dot4"></span>
+        <span class="dot" id="dot5"></span>
+
+    </div>
+
+
+    <!-- =========================
+         LAYER 1
+    ========================== -->
+
+    <section class="layer active center" id="layer1">
+
+        <div class="big-heart">
+            ♡
+        </div>
+
+        <div class="small">
+            ada sesuatu untukmu
+        </div>
+
+        <h1>
+            Hai, <span id="name1">Kiya</span>
+        </h1>
+
+        <p class="description">
+            Sebelum kamu melihat semuanya,
+            ada satu hal kecil yang harus kamu lakukan.
+        </p>
+
+        <div class="input-group">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Masukkan username"
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Masukkan password"
+            >
+
+        </div>
+
+        <button class="main-btn" onclick="login()">
+            Masuk ♡
+        </button>
+
+        <div class="error" id="error"></div>
+
+    </section>
+
+
+    <!-- =========================
+         LAYER 2
+    ========================== -->
+
+    <section class="layer center" id="layer2">
+
+        <div class="big-heart">
+            ♥
+        </div>
+
+        <div class="small">
+            sebelum lanjut
+        </div>
+
+        <h2>
+            Ada sesuatu yang ingin aku bilang.
+        </h2>
+
+        <p class="description">
+            Nggak panjang dan nggak dibuat-buat.
+            Aku cuma ingin jujur tentang apa yang aku rasakan.
+        </p>
+
+        <button class="main-btn" onclick="nextLayer(3)">
+            Lanjut
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         LAYER 3
+    ========================== -->
+
+    <section class="layer" id="layer3">
+
+        <div class="small">
+            untuk kamu
+        </div>
+
+        <h2>
+            Kiya,
+        </h2>
+
+        <div class="letter">
+
+            <p>
+                Sebenarnya sudah cukup lama aku ingin
+                menyampaikan ini.
+            </p>
+
+            <p>
+                Aku suka sama kamu. Aku nyaman setiap kali
+                ngobrol sama kamu, dan tanpa sadar kamu jadi
+                seseorang yang cukup berarti buat aku.
+            </p>
+
+            <p>
+                Aku nggak mau membuat ini terdengar berlebihan.
+                Aku cuma ingin jujur kalau perasaanku ke kamu
+                bukan sekadar teman biasa.
+            </p>
+
+            <p>
+                Aku ingin mengenal kamu lebih dekat dan,
+                kalau kamu juga punya perasaan yang sama,
+                aku ingin mencoba menjalani sesuatu
+                bersama kamu.
+            </p>
+
+            <p>
+                Kamu nggak harus langsung menjawab.
+                Aku cuma ingin kamu tahu apa yang sebenarnya
+                aku rasakan.
+            </p>
+
+            <div class="signature">
+
+                Dari seseorang yang ingin jujur,
+
+                <strong id="sender1">
+                    Faaliq
+                </strong>
+
+            </div>
+
+        </div>
+
+        <button class="main-btn" onclick="nextLayer(4)">
+            Aku sudah baca
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         LAYER 4
+    ========================== -->
+
+    <section class="layer center" id="layer4">
+
+        <div class="big-heart">
+            ♡
+        </div>
+
+        <div class="small">
+            sekarang giliran kamu
+        </div>
+
+        <h2>
+            Jawaban kamu?
+        </h2>
+
+        <p class="description">
+            Nggak perlu merasa terpaksa.
+            Pilih sesuai apa yang benar-benar kamu rasakan.
+        </p>
+
+        <div class="answer-buttons">
+
+            <button class="accept" onclick="accepted()">
+                Aku Terima ❤️
+            </button>
+
+            <button class="reject" onclick="notYet()">
+                Aku Belum Bisa
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LAYER 5
+    ========================== -->
+
+    <section class="layer center" id="layer5">
+
+        <div class="result-icon" id="resultIcon">
+            ♥
+        </div>
+
+        <div class="small" id="resultSmall">
+            untuk kita
+        </div>
+
+        <h2 id="resultTitle">
+            Terima kasih.
+        </h2>
+
+        <p class="result-text" id="resultText">
+            Apa pun jawabannya, terima kasih sudah membaca
+            dan sudah mau jujur.
+        </p>
+
+        <button
+            class="main-btn"
+            id="waButton"
+            onclick="sendWhatsApp()"
+        >
+            Kirim jawaban ke WhatsApp
+        </button>
+
+        <button
+            class="secondary-btn"
+            onclick="nextLayer(3)"
+        >
+            Baca lagi
+        </button>
+
+    </section>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ==========================================================
+   CONFIGURATION
+   UBAH BAGIAN INI SAJA
+========================================================== */
+
+const CONFIG = {
+
+    // LOGIN
+    username: "kiya cantik",
+    password: "love you",
+
+    // NAMA
+    targetName: "Kiya",
+    senderName: "Faaliq",
+
+    /*
+        NOMOR WHATSAPP TUJUAN
+
+        Format:
+        628xxxxxxxxxx
+
+        Jangan gunakan:
+        +62
+        08
+        spasi
+        tanda -
+    */
+
+    whatsappNumber: "6285123701439"
+
+};
+
+
+/* ==========================================================
+   SET NAMA
+========================================================== */
+
+document.getElementById("name1").textContent =
+    CONFIG.targetName;
+
+document.getElementById("sender1").textContent =
+    CONFIG.senderName;
+
+
+/* ==========================================================
+   LOGIN
+========================================================== */
+
+function login(){
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("error");
+
+
+    if(
+        username === CONFIG.username &&
+        password === CONFIG.password
+    ){
+
+        error.textContent = "";
+
+        nextLayer(2);
+
+    }else{
+
+        error.textContent =
+            "Username atau password salah.";
+
+    }
+
+}
+
+
+/* ENTER LOGIN */
+
+document.getElementById("password")
+.addEventListener("keydown",function(e){
+
+    if(e.key === "Enter"){
+        login();
+    }
+
+});
+
+
+/* ==========================================================
+   PINDAH LAYER
+========================================================== */
+
+function nextLayer(number){
+
+    document
+        .querySelectorAll(".layer")
+        .forEach(layer=>{
+            layer.classList.remove("active");
+        });
+
+
+    document
+        .getElementById("layer"+number)
+        .classList.add("active");
+
+
+    document
+        .querySelectorAll(".dot")
+        .forEach(dot=>{
+            dot.classList.remove("active");
+        });
+
+
+    document
+        .getElementById("dot"+number)
+        .classList.add("active");
+
+}
+
+
+/* ==========================================================
+   JAWABAN TERIMA
+========================================================== */
+
+function accepted(){
+
+    document.getElementById("resultIcon")
+        .textContent = "♥";
+
+    document.getElementById("resultSmall")
+        .textContent = "jawaban kamu";
+
+    document.getElementById("resultTitle")
+        .textContent = "Aku senang mendengarnya.";
+
+    document.getElementById("resultText")
+        .textContent =
+        `Terima kasih sudah menerima perasaan ${CONFIG.senderName}. 
+        Aku nggak akan menjanjikan sesuatu yang berlebihan. 
+        Aku cuma ingin kita menjalani semuanya dengan jujur,
+        saling menghargai, dan melihat ke mana hubungan ini berjalan.`;
+
+    nextLayer(5);
+
+}
+
+
+/* ==========================================================
+   JAWABAN BELUM BISA
+========================================================== */
+
+function notYet(){
+
+    document.getElementById("resultIcon")
+        .textContent = "♡";
+
+    document.getElementById("resultSmall")
+        .textContent = "aku mengerti";
+
+    document.getElementById("resultTitle")
+        .textContent = "Nggak apa-apa.";
+
+    document.getElementById("resultText")
+        .textContent =
+        `Terima kasih karena sudah jujur, ${CONFIG.targetName}. 
+        Aku menghargai jawaban kamu. 
+        Aku nggak akan memaksa kamu untuk memberikan jawaban
+        yang belum siap kamu berikan.`;
+
+    nextLayer(5);
+
+}
+
+
+/* ==========================================================
+   WHATSAPP
+========================================================== */
+
+let answerStatus = "";
+
+
+/*
+   Kita ubah fungsi tombol berdasarkan jawaban.
+*/
+
+function accepted(){
+
+    answerStatus = "Aku Terima ❤️";
+
+    document.getElementById("resultIcon")
+        .textContent = "♥";
+
+    document.getElementById("resultSmall")
+        .textContent = "jawaban kamu";
+
+    document.getElementById("resultTitle")
+        .textContent = "Aku senang mendengarnya.";
+
+    document.getElementById("resultText")
+        .textContent =
+        `Terima kasih sudah menerima perasaan ${CONFIG.senderName}. Aku ingin kita menjalani semuanya dengan jujur, saling menghargai, dan tanpa terburu-buru.`;
+
+    nextLayer(5);
+}
+
+
+function notYet(){
+
+    answerStatus = "Aku Belum Bisa";
+
+    document.getElementById("resultIcon")
+        .textContent = "♡";
+
+    document.getElementById("resultSmall")
+        .textContent = "aku mengerti";
+
+    document.getElementById("resultTitle")
+        .textContent = "Nggak apa-apa.";
+
+    document.getElementById("resultText")
+        .textContent =
+        `Terima kasih karena sudah jujur, ${CONFIG.targetName}. Aku menghargai jawaban kamu dan aku nggak akan memaksa.`;
+
+    nextLayer(5);
+}
+
+
+/* ==========================================================
+   KIRIM KE WHATSAPP
+========================================================== */
+
+function sendWhatsApp(){
+
+    const message =
+
+`Hai ${CONFIG.senderName}, aku ${CONFIG.targetName}.
+
+Aku sudah membaca pesan kamu.
+
+Jawabanku:
+${answerStatus}
+
+Terima kasih sudah jujur menyampaikan perasaan kamu. ❤️`;
+
+
+    const url =
+        "https://wa.me/" +
+        CONFIG.whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(url,"_blank");
+
+}
+
+</script>
+
+</body>
+</html>
